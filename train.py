@@ -2,9 +2,9 @@ import argparse
 import importlib
 from utils import *
 
-MODEL_DIR='models/usc-had/base/session0_max_acc.pth'
+MODEL_DIR=None
 DATA_DIR = 'data/'
-PROJECT='meta'
+PROJECT='base'
 SAVE_DIR='models'
 
 def get_command_line_parser():
@@ -19,7 +19,7 @@ def get_command_line_parser():
     # about pre-training
     parser.add_argument('-epochs_base', type=int, default=60)
     parser.add_argument('-epochs_new', type=int, default=50)
-    parser.add_argument('-lr_base', type=float, default=0.001)
+    parser.add_argument('-lr_base', type=float, default=0.01)
     parser.add_argument('-lr_new', type=float, default=0.001)
     parser.add_argument('-schedule', type=str, default='Step',
                         choices=['Step', 'Milestone'])
@@ -27,7 +27,7 @@ def get_command_line_parser():
     parser.add_argument('-step', type=int, default=20)
     parser.add_argument('-decay', type=float, default=0.0005)
     parser.add_argument('-momentum', type=float, default=0.9)
-    parser.add_argument('-gamma', type=float, default=0.5)
+    parser.add_argument('-gamma', type=float, default=0.1)
     parser.add_argument('-temperature', type=int, default=16)
     parser.add_argument('-not_data_init', action='store_true', help='using average data embedding to init or not')
 
