@@ -14,4 +14,4 @@ python train.py --project 'meta' -dataset 'usc-had' -epochs_base 60 -lr_base 0.0
 
 # Acknowledgment
 Our project implementation references the following repositories. Thanks to the author for the open source code.
-- [CEC][CVPR2021]
+- [CEC](https://github.com/icoz69/CEC-CVPR2021)
